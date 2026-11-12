@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penjelajah AI Sejarah</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #071a33, #123c69);
+      color: white;
+      text-align: center;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 60px 20px 30px;
+    }
+
+    h1 {
+      color: #ffd166;
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .subjudul {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .konten {
+      background: white;
+      color: #172033;
+      margin: 20px;
+      padding: 25px;
+      border-radius: 18px;
+    }
+
+    input {
+      width: 80%;
+      max-width: 400px;
+      padding: 14px;
+      border: 1px solid #bbb;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      background: #ffd166;
+      color: #071a33;
+      border: none;
+      border-radius: 10px;
+      padding: 14px 24px;
+      margin-top: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ffbd2e;
+    }
+
+    #pesan {
+      margin-top: 18px;
+      font-weight: bold;
+      color: #123c69;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Penjelajah AI Sejarah</h1>
+    <p class="subjudul">
+      Multimedia Pembelajaran Interaktif<br>
+      Materi Penelitian Sejarah Kelas X
+    </p>
+  </header>
+
+  <main class="konten">
+    <h2>Selamat Datang, Penjelajah Sejarah!</h2>
+
+    <p>
+      Masukkan nama untuk memulai perjalanan memahami
+      langkah-langkah penelitian sejarah.
+    </p>
+
+    <input
+      type="text"
+      id="nama"
+      placeholder="Tuliskan nama peserta didik"
+    >
+
+    <br>
+
+    <button onclick="mulaiBelajar()">
+      Mulai Menjelajah
+    </button>
+
+    <p id="pesan"></p>
+  </main>
+
+  <script>
+    function mulaiBelajar() {
+      const nama = document.getElementById("nama").value.trim();
+      const pesan = document.getElementById("pesan");
+
+      if (nama === "") {
+        pesan.textContent = "Silakan masukkan nama terlebih dahulu.";
+      } else {
+        pesan.textContent =
+          "Selamat datang, " + nama +
+          "! Perjalanan sejarah siap dimulai.";
+      }
+    }
+  </script>
+</body>
+</html>
