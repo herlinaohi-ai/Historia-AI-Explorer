@@ -116,6 +116,123 @@
           "! Perjalanan sejarah siap dimulai.";
       }
     }
-  </script>
-</body>
-</html>
+  
+<section id="pilihanMisi" class="konten" style="display: none;">
+  <h2>Pilih Misi Penelitian Sejarah</h2>
+
+  <p>
+    Selesaikan setiap misi secara berurutan untuk memahami
+    tahapan penelitian sejarah.
+  </p>
+
+  <button onclick="bukaMisi(1)">
+    Misi 1: Pemilihan Topik
+  </button>
+
+  <br>
+
+  <button onclick="bukaMisi(2)">
+    Misi 2: Heuristik
+  </button>
+
+  <br>
+
+  <button onclick="bukaMisi(3)">
+    Misi 3: Verifikasi
+  </button>
+
+  <br>
+
+  <button onclick="bukaMisi(4)">
+    Misi 4: Interpretasi dan Historiografi
+  </button>
+
+  <div id="materiMisi" style="margin-top: 25px;"></div>
+</section>
+
+<script>
+  function mulaiBelajar() {
+    const nama = document.getElementById("nama").value.trim();
+    const pesan = document.getElementById("pesan");
+    const pilihanMisi = document.getElementById("pilihanMisi");
+
+    if (nama === "") {
+      pesan.textContent = "Silakan masukkan nama terlebih dahulu.";
+      return;
+    }
+
+    pesan.textContent =
+      "Selamat datang, " + nama +
+      "! Silakan memilih misi pertama.";
+
+    pilihanMisi.style.display = "block";
+
+    setTimeout(function () {
+      pilihanMisi.scrollIntoView({
+        behavior: "smooth"
+      });
+    }, 300);
+  }
+
+  function bukaMisi(nomor) {
+    const materi = document.getElementById("materiMisi");
+
+    if (nomor === 1) {
+      materi.innerHTML = `
+        <h3>Misi 1: Pemilihan Topik</h3>
+        <p>
+          Pilih topik sejarah yang menarik, penting, memiliki sumber,
+          dan dapat diteliti.
+        </p>
+        <p>
+          <strong>Tantangan:</strong> Tuliskan satu peristiwa sejarah
+          lokal di Gorontalo yang ingin kamu teliti.
+        </p>
+      `;
+    }
+
+    if (nomor === 2) {
+      materi.innerHTML = `
+        <h3>Misi 2: Heuristik</h3>
+        <p>
+          Heuristik adalah kegiatan mencari dan mengumpulkan
+          sumber-sumber sejarah.
+        </p>
+        <p>
+          Sumber dapat berupa arsip, foto, surat kabar, benda,
+          buku, dan wawancara.
+        </p>
+      `;
+    }
+
+    if (nomor === 3) {
+      materi.innerHTML = `
+        <h3>Misi 3: Verifikasi</h3>
+        <p>
+          Verifikasi adalah proses memeriksa keaslian dan
+          kepercayaan sumber sejarah.
+        </p>
+        <p>
+          Peneliti melakukan kritik eksternal dan kritik internal.
+        </p>
+      `;
+    }
+
+    if (nomor === 4) {
+      materi.innerHTML = `
+        <h3>Misi 4: Interpretasi dan Historiografi</h3>
+        <p>
+          Interpretasi adalah proses menafsirkan fakta sejarah.
+          Historiografi adalah kegiatan menuliskan hasil penelitian
+          sejarah secara runtut dan berdasarkan bukti.
+        </p>
+      `;
+    }
+
+    materi.scrollIntoView({
+      behavior: "smooth"
+    });
+  }
+</script>
+
+
